@@ -3,6 +3,10 @@ import Home from './Component/HomePage/Home/Home';
 // eslint-disable-next-line
 import "swiper/css/bundle";
 import './App.css';
+import NavBar from "./Component/Shared/NavBar/NavBar";
+import { Route, Routes } from "react-router-dom";
+import LogIn from "./Component/LogIn/LogIn";
+import SignUp from "./Component/SignUp/SignUp";
 
 
 
@@ -10,7 +14,14 @@ import './App.css';
 function App() {
   return (
     <div>
-      <Home></Home>
+      <NavBar></NavBar>
+      <Routes>
+        <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/home" element={<Home></Home>}></Route>
+        <Route path="/login" element={<LogIn></LogIn>}></Route>
+        <Route path="/signup" element={<SignUp></SignUp>}></Route>
+      </Routes>
+      
     </div>
   );
 }
